@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Market Information System for Farmers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>🔐 Login 🔐</h1>
+    </header>
+
+    <main class="dashboard">
+        <section class="registration-form">
+            <h2>Login to Your Account</h2>
+            <form id="login-form">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="userType" class="form-label">Login as</label>
+                    <select class="form-select" id="userType" required>
+                        <option value="" selected disabled>Choose...</option>
+                        <option value="Farmer">Farmer</option>
+                        <option value="Buyer">Buyer</option>
+                        <option value="Seller">Seller</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="text-center p-3 bg-success text-white mt-5">
+        <p>&copy; 2024 Market Information System for Farmers</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

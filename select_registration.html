@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Creation - MISF</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Remove background image for this page */
+    body {
+        background: none; /* No background image */
+        color: #2c3e50;
+        line-height: 1.6;
+        font-size: 16px;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100vh; /* Ensure full page height */
+    }
+
+    /* Card background and button styles to match the base style */
+    .card {
+        background: rgba(255, 255, 255, 0.9); /* Light background with transparency */
+        color: #2c3e50;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    /* Make all buttons similar as defined in style.css */
+    button {
+        background: #2e7d32;
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        margin: 15px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+        background: #1b5e20;
+        transform: scale(1.1);
+    }
+
+    /* Remove the menu bar styling */
+    .menu-card {
+        display: none; /* Hide the menu bar completely */
+    }
+
+    /* Back to Login Button */
+    .back-to-login {
+        background: #d32f2f; /* Red color for the back to login button */
+        color: white;
+        border-radius: 25px;
+        padding: 12px 25px;
+        margin-top: 20px;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    .back-to-login:hover {
+        background: #c62828; /* Darker red on hover */
+    }
+
+    /* Ensure footer stays at the bottom */
+    footer {
+        margin-top: auto;
+        padding: 18px 0;
+        background: #2e7d32;
+        color: #fff;
+        text-align: center;
+        border-radius: 15px 15px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <h1>Create an Account</h1>
+    <p>Select the type of account you want to create.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="dashboard">
+    <section id="account-selection">
+      <div class="card">
+        <h2>Select Account Type</h2>
+        <div class="button-container">
+          <button class="btn-success" onclick="location.href='farmer_registration.html'">Create Farmer Account</button>
+          <button class="btn-info" onclick="location.href='buyer_registration.html'">Create Buyer Account</button>
+          <button class="btn-warning" onclick="location.href='seller_registration.html'">Create Seller Account</button>
+        </div>
+      </div>
+      <!-- Back to Login Button -->
+      <a href="login.html" class="back-to-login">Back to Login</a>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Market Information System for Farmers</p>
+  </footer>
+</body>
+</html>
