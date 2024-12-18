@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmer Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>👨‍🌾 Farmers' Guide 👨‍🌾</h1>
@@ -13,14 +15,10 @@
 
     <nav class="menu-card">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="farmers_guide.html">Farmers' Guide</a></li>
-            <li><a href="crop_trends.html">View Crop Trends</a></li>
-            <li><a href="feedback.html">Submit Feedback</a></li>
-            <li><a href="seller.html">Seller Registration</a></li>
-            <li><a href="buyer.html">Buyer Registration</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li><a href="farmer_dashboard.php">Home</a></li>
+            <li><a href="farmers_guide.php">Farmers' Guide</a></li>
+            <li><a href="crop_trends.php">View Crop Trends</a></li>
+            <li><a href="feedback.php">Submit Feedback</a></li>
         </ul>
     </nav>
 
@@ -91,10 +89,10 @@
                         <td>Garlics</td>
                         <td>220 ৳</td>
                         <td>Mongla Port Market</td>
-                    </tr>                                                                                     
+                    </tr>
                 </tbody>
             </table>
-    
+
             <h2>Current Seed Prices</h2>
             <table>
                 <thead>
@@ -175,26 +173,27 @@
                 <li>🌾 Start field preparation for Boro Rice with proper irrigation for dry fields.</li><br>
                 <li>🍅 November's cooler weather is ideal for planting Tomatoes.</li><br>
                 <li>💰 With rising costs, consider using organic alternatives to cut expenses.</li><br>
-                <li>🥗 Plant cool-season crops like peas, lettuce, and radishes for a fresh start to the season.</li><br>
-                <li>🌶️ Focus on heat-loving crops such as tomatoes, peppers, and cucumbers for a productive harvest.</li><br>
-                <li>🥕 Sow root vegetables like carrots, turnips, and sweet potatoes for a hearty autumn harvest.</li><br>
+                <li>🥗 Plant cool-season crops like peas, lettuce, and radishes for a fresh start to the season.</li>
+                <br>
+                <li>🌶️ Focus on heat-loving crops such as tomatoes, peppers, and cucumbers for a productive harvest.
+                </li><br>
+                <li>🥕 Sow root vegetables like carrots, turnips, and sweet potatoes for a hearty autumn harvest.</li>
+                <br>
                 <li>🌽 Consider planting beans and corn for an early-summer bounty.</li><br>
                 <li>🎃 For late-season harvests, plant squash, pumpkins, and melons.</li><br>
                 <li>🧄 Try planting garlic and onions for a winter crop that will be ready early next year.</li><br>
                 <li>🌿 Start herb gardens with basil, cilantro, and dill to add fresh flavor to your dishes.</li><br>
                 <li>🥒 Opt for fast-growing crops like zucchini and green beans that thrive in the summer heat.</li><br>
-            </ul>            
+            </ul>
         </section>
 
 
-        <div class="button-container">
-            <button onclick="location.href='index.html'">Back to Home</button>
-            <button onclick="location.href='crop_trends.html'">View Crop Trends</button>
-        </div>
+
     </main>
 
     <footer>
         <p>© 2024 Market Information System for Farmers</p>
     </footer>
 </body>
+
 </html>

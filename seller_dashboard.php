@@ -26,26 +26,6 @@
     </nav>
 
     <main>
-        <!-- Seller Registration Form -->
-        <section class="registration-form">
-            <h2>Register as a Seller</h2>
-            <form id="seller-registration">
-                <label for="seller-name">Seller Name:</label>
-                <input type="text" id="seller-name" placeholder="Enter your name" required>
-
-                <label for="contact">Contact:</label>
-                <input type="text" id="contact" placeholder="Enter contact number" required>
-
-                <label for="location">Location:</label>
-                <input type="text" id="location" placeholder="Enter your location" required>
-
-                <label for="inputs">Inputs Provided:</label>
-                <textarea id="inputs" placeholder="List your inputs (e.g., seeds, fertilizers)" required></textarea>
-
-                <button type="submit">Register</button>
-            </form>
-        </section>
-
         <!-- Add Crop Listings -->
         <section class="add-crop-form">
             <h2>Add Crop Listings</h2>

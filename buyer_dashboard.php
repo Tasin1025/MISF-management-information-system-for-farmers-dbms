@@ -8,7 +8,7 @@
 </head>
 <body>
     <header class="header">
-        <h1>🛒 Buyer Registration 🛒</h1>
+        <h1>🛒 Buyer Dashboard 🛒</h1>
     </header>
 
     <nav class="menu-card">
@@ -25,32 +25,6 @@
     </nav>
 
     <main>
-        <!-- Buyer Registration Form -->
-        <section class="registration-form">
-            <h2>Sign up as a Buyer</h2>
-            <form id="buyer-registration">
-                <label for="buyer-name">Full Name:</label>
-                <input type="text" id="buyer-name" placeholder="Enter your name" required>
-
-                <label for="buyer-category">Category of Buyer:</label>
-                <select id="buyer-category" required>
-                    <option value="retail">Retail Buyer</option>
-                    <option value="wholesale">Wholesale Buyer</option>
-                </select>
-
-                <label for="contact-info">Contact Info:</label>
-                <input type="text" id="contact-info" placeholder="Enter contact number" required>
-
-                <label for="preferred-crop">Preferred Crop:</label>
-                <input type="text" id="preferred-crop" placeholder="Enter preferred crop" required>
-
-                <label for="location">Location:</label>
-                <input type="text" id="location" placeholder="Enter your location" required>
-
-                <button type="submit">Register</button>
-            </form>
-        </section>
-
         <!-- Crop Listings Section -->
         <section class="crop-listings">
             <h2>Available Crops</h2>
@@ -64,9 +38,7 @@
                 </select>
                 <button id="search-button">Search</button>
             </div>
-                <!-- Dynamic crop listings will appear here -->
-            </div>
-            </div>
+            <!-- Dynamic crop listings will appear here -->
         </section>
 
         <!-- Inquiry Section -->

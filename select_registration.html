@@ -7,21 +7,21 @@
   <link rel="stylesheet" href="style.css">
   
   <style>
-    /* Remove background image for this page */
+   
     body {
-        background: none; /* No background image */
+        background: none; 
         color: #2c3e50;
         line-height: 1.6;
         font-size: 16px;
         overflow-x: hidden;
         display: flex;
         flex-direction: column;
-        height: 100vh; /* Ensure full page height */
+        height: 100vh; 
     }
 
-    /* Card background and button styles to match the base style */
+
     .card {
-        background: rgba(255, 255, 255, 0.9); /* Light background with transparency */
+        background: rgba(255, 255, 255, 0.9); 
         color: #2c3e50;
         padding: 20px;
         border-radius: 10px;
@@ -38,7 +38,7 @@
         margin-top: 20px;
     }
 
-    /* Make all buttons similar as defined in style.css */
+
     button {
         background: #2e7d32;
         color: #fff;
@@ -57,29 +57,35 @@
         transform: scale(1.1);
     }
 
-    /* Remove the menu bar styling */
     .menu-card {
-        display: none; /* Hide the menu bar completely */
+        display: none; 
     }
 
-    /* Back to Login Button */
     .back-to-login {
-        background: #d32f2f; /* Red color for the back to login button */
-        color: white;
-        border-radius: 25px;
-        padding: 12px 25px;
-        margin-top: 20px;
-        text-decoration: none;
-        text-align: center;
-        display: inline-block;
-        font-weight: bold;
-    }
+      background: #d32f2f; 
+      color: white;
+      border-radius: 25px;
+      padding: 12px 25px;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  }
 
-    .back-to-login:hover {
-        background: #c62828; /* Darker red on hover */
-    }
+  .back-to-login:hover {
+      background: #c62828;
+      transform: scale(1.1); 
+  }
 
-    /* Ensure footer stays at the bottom */
+  .back-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 20px; 
+}
+
+   
     footer {
         margin-top: auto;
         padding: 18px 0;
@@ -91,29 +97,31 @@
   </style>
 </head>
 <body>
-  <!-- Header Section -->
+
   <header class="header">
     <h1>Create an Account</h1>
     <p>Select the type of account you want to create.</p>
   </header>
 
-  <!-- Main Content -->
+
   <main class="dashboard">
     <section id="account-selection">
       <div class="card">
         <h2>Select Account Type</h2>
         <div class="button-container">
-          <button class="btn-success" onclick="location.href='farmer_registration.html'">Create Farmer Account</button>
-          <button class="btn-info" onclick="location.href='buyer_registration.html'">Create Buyer Account</button>
-          <button class="btn-warning" onclick="location.href='seller_registration.html'">Create Seller Account</button>
+          <button class="btn-success" onclick="location.href='farmer_registration.php'">Create Farmer Account</button>
+          <button class="btn-info" onclick="location.href='buyer_registration.php'">Create Buyer Account</button>
+          <button class="btn-warning" onclick="location.href='seller_registration.php'">Create Seller Account</button>
         </div>
       </div>
-      <!-- Back to Login Button -->
-      <a href="login.html" class="back-to-login">Back to Login</a>
+      <div class="back-buttons-container">
+        <a href="login.php" class="back-to-login">Back to Login</a>
+        <a href="index.php" class="back-to-login">Back to Home</a>
+      </div>
     </section>
   </main>
 
-  <!-- Footer Section -->
+
   <footer>
     <p>&copy; 2024 Market Information System for Farmers</p>
   </footer>
