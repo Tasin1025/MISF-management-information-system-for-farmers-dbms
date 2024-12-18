@@ -1,3 +1,15 @@
+<?php
+session_start();
+require 'db_config.php'; // Database connection file
+
+// Fetch crop and seed data from the database
+$sql_crops = "SELECT id, name, price FROM crops";
+$result_crops = $conn->query($sql_crops);
+
+$sql_seeds = "SELECT seeds.id, seeds.name, seeds.price FROM seeds";
+$result_seeds = $conn->query($sql_seeds);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,72 +36,28 @@
 
     <main>
         <section id="market-prices">
-            <h2>Current Market Prices</h2>
+            <h2>Current Crop Prices</h2>
             <p>Here, we gather crops from all over Bangladesh at the lowest prices!</p>
             <table>
                 <thead>
                     <tr>
                         <th>Crop Type</th>
                         <th>Price (per kg)</th>
-                        <th>Market</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Coarse Rice</td>
-                        <td>53 ৳</td>
-                        <td>Kawran Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Fine Rice</td>
-                        <td>67 ৳</td>
-                        <td>Rajshahi Agricultural Market </td>
-                    </tr>
-                    <tr>
-                        <td>Wheat Flour (Atta)</td>
-                        <td>64 ৳</td>
-                        <td>Shyamoli Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Fine Wheat Flour (Maida)</td>
-                        <td>68 ৳</td>
-                        <td>Chittagong Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Lentils (Masoor dal)</td>
-                        <td>130 ৳</td>
-                        <td>Kawran Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Green grams (Moong dal)</td>
-                        <td>120 ৳</td>
-                        <td>Faridpur Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Soybean Oil</td>
-                        <td>180 ৳</td>
-                        <td>Shyamoli Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Mustard Oil</td>
-                        <td>230 ৳</td>
-                        <td>Shyam Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Potatoes</td>
-                        <td>75 ৳</td>
-                        <td>Mongla Port Market</td>
-                    </tr>
-                    <tr>
-                        <td>Onions</td>
-                        <td>110 ৳</td>
-                        <td>Shyam Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Garlics</td>
-                        <td>220 ৳</td>
-                        <td>Mongla Port Market</td>
-                    </tr>
+                    <?php
+                    if ($result_crops && $result_crops->num_rows > 0) {
+                        while ($row = $result_crops->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['price']) . " ৳</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='2' class='text-center'>No crop data found</td></tr>";
+                    }
+                    ?>
                 </tbody>
             </table>
 
@@ -99,65 +67,21 @@
                     <tr>
                         <th>Seed Type</th>
                         <th>Price (per kg)</th>
-                        <th>Market</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Rice Seed</td>
-                        <td>55 ৳</td>
-                        <td>Rajshahi Agricultural Market</td>
-                    </tr>
-                    <tr>
-                        <td>Wheat Seed</td>
-                        <td>72 ৳</td>
-                        <td>Shyamoli Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Corn Seed</td>
-                        <td>53 ৳</td>
-                        <td>Chittagong Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Mustard Seed</td>
-                        <td>74 ৳</td>
-                        <td>Shyam Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Bean Seed</td>
-                        <td>100 ৳</td>
-                        <td>Kawran Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Sunflower Seed</td>
-                        <td>115 ৳</td>
-                        <td>Rajshahi Agricultural Market</td>
-                    </tr>
-                    <tr>
-                        <td>Tomato Seed</td>
-                        <td>140 ৳</td>
-                        <td>Faridpur Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Chili Seed</td>
-                        <td>127 ৳</td>
-                        <td>Chittagong Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Carrot Seed</td>
-                        <td>85 ৳</td>
-                        <td>Mongla Port Market</td>
-                    </tr>
-                    <tr>
-                        <td>Onion Seed</td>
-                        <td>105 ৳</td>
-                        <td>Shyam Bazar</td>
-                    </tr>
-                    <tr>
-                        <td>Garlic Seed</td>
-                        <td>135 ৳</td>
-                        <td>Kawran Bazar</td>
-                    </tr>
+                    <?php
+                    if ($result_seeds && $result_seeds->num_rows > 0) {
+                        while ($row = $result_seeds->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['price']) . " ৳</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='2' class='text-center'>No seed data found</td></tr>";
+                    }
+                    ?>
                 </tbody>
             </table>
         </section>
@@ -186,9 +110,6 @@
                 <li>🥒 Opt for fast-growing crops like zucchini and green beans that thrive in the summer heat.</li><br>
             </ul>
         </section>
-
-
-
     </main>
 
     <footer>

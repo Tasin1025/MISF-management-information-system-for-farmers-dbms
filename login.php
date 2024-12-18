@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($email) && !empty($password) && !empty($userType)) {
         
-        // Choose the appropriate table based on the selected user type
         if ($userType == 'Farmer') {
             $table = 'farmers';
             $redirectPage = 'farmer_dashboard.php';
@@ -27,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
-        // SQL query to check if the user exists in the selected table
+
         $sql = "SELECT * FROM $table WHERE email = ?";
         $stmt = $conn->prepare($sql);
 
@@ -43,14 +42,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($result->num_rows > 0) {
                 $user = $result->fetch_assoc();
 
-                // Check if the password matches
+        
                 if ($password == $user['password']) { 
                     // Set session variables for user
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['email'] = $user['email'];
                     $_SESSION['name'] = $user['name'];
 
-                    // Redirect based on user type
                     header("Location: $redirectPage");
                     exit;
                 } else {

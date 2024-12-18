@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db_config.php'; // Include DB configuration file
+require 'db_config.php'; 
 
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT * FROM farmers WHERE id = ?";
@@ -11,16 +11,15 @@ $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 $stmt->close();
 
-$email = $user['email']; // Get email from session
-$name = $user['name'];   // Get name from session
+$email = $user['email'];
+$name = $user['name'];   
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $rating = intval($_POST['rating']);
     $comments = $_POST['comments'];
     $suggestions = $_POST['suggestions'];
 
-    // Insert feedback into the database
+   
     $sql = "INSERT INTO feedback (email, name, rating, comments, suggestions) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssiss", $email, $name, $rating, $comments, $suggestions);
@@ -34,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->close();
 }
 
-// Fetch all feedback for display
+
 $sql = "SELECT feedback.*, farmers.name AS farmer_name 
         FROM feedback
         JOIN farmers ON feedback.email = farmers.email";
@@ -99,33 +98,6 @@ $result = $conn->query($sql);
             </form>
         </section>
 
-        <section class="mt-5">
-            <h2 class="text-center">All Feedback</h2>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Farmer Name</th>
-                        <th>Email</th>
-                        <th>Rating</th>
-                        <th>Comments</th>
-                        <th>Suggestions</th>
-                        <th>Submission Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($row = $result->fetch_assoc()) : ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($row['farmer_name']); ?></td>
-                        <td><?php echo htmlspecialchars($row['email']); ?></td>
-                        <td><?php echo htmlspecialchars($row['rating']); ?></td>
-                        <td><?php echo htmlspecialchars($row['comments']); ?></td>
-                        <td><?php echo htmlspecialchars($row['suggestions']); ?></td>
-                        <td><?php echo htmlspecialchars($row['submission_date']); ?></td>
-                    </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
-        </section>
     </main>
 
     <footer class="text-center p-3 bg-success text-white mt-5">

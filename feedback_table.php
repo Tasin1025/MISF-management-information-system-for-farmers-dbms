@@ -1,18 +1,13 @@
 <?php
 session_start();
-require 'db_config.php'; // Database connection file
+require 'db_config.php'; 
 
-// Check if the user is logged in
-if (!isset($_SESSION['user_id'])) {
-    // Redirect to login page if user is not logged in
-    header("Location: login.php");
-    exit;
-}
 
-// Fetch the user information from the database
+
+
 $user_name = $_SESSION['name'];
 
-// Handle deletion of feedback
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_feedback'])) {
     $submission_date = $_POST['submission_date'];
 
@@ -29,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_feedback'])) {
     $stmt->close();
 }
 
-// Fetch all feedback from the database
+
 $sql_feedback = "SELECT farmers.name, feedback.rating, feedback.comments, feedback.suggestions, feedback.submission_date 
                  FROM feedback 
                  JOIN farmers ON feedback.email = farmers.email";

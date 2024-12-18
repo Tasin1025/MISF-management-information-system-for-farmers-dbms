@@ -1,18 +1,10 @@
 <?php
 session_start();
-require 'db_config.php'; // Database connection file
+require 'db_config.php'; 
 
-// Check if the user is logged in
-if (!isset($_SESSION['user_id'])) {
-    // Redirect to login page if user is not logged in
-    header("Location: login.php");
-    exit;
-}
-
-// Fetch the user information from the database
 $user_name = $_SESSION['name'];
 
-// Handle update of farmer details
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_farmer'])) {
     $farmer_id = $_POST['farmer_id'];
     $name = $_POST['name'];
@@ -32,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_farmer'])) {
     $stmt->close();
 }
 
-// Handle deletion of farmer
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_farmer'])) {
     $farmer_id = $_POST['farmer_id'];
 
@@ -48,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_farmer'])) {
     $stmt->close();
 }
 
-// Fetch all farmers from the database
+
 $sql_farmers = "SELECT id, name, land_size, crops_grown, livestock FROM farmers";
 $result_farmers = $conn->query($sql_farmers);
 ?>
