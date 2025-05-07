@@ -1,8 +1,8 @@
 <?php
 session_start();
-require 'db_config.php'; // Database connection file
+require 'db_config.php'; 
 
-// Fetch crop and seed data from the database
+
 $sql_crops = "SELECT id, name, price FROM crops";
 $result_crops = $conn->query($sql_crops);
 
@@ -15,7 +15,7 @@ $result_seeds = $conn->query($sql_seeds);
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=deviACce-width, initial-scale=1.0">
     <title>Farmer Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -113,7 +113,7 @@ $result_seeds = $conn->query($sql_seeds);
     </main>
 
     <footer>
-        <p>© 2024 Market Information System for Farmers</p>
+        <p>© 2025 Market Information System for Farmers</p>
     </footer>
 </body>
 

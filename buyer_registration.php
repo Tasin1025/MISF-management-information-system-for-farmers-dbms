@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </main>
 
     <footer>
-        <p>&copy; 2024 Market Information System for Farmers</p>
+        <p>© 2025 Market Information System for Farmers</p>
     </footer>
 </body>
 

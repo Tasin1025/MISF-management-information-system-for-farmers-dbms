@@ -117,7 +117,7 @@ $result_farmers = $conn->query($sql_farmers);
     </main>
 
     <footer class="text-center p-3 bg-success text-white mt-0">
-        <p>&copy; 2024 Market Information System for Farmers</p>
+        <p>&copy; 2025 Market Information System for Farmers</p>
     </footer>
 
 </body>

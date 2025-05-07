@@ -111,7 +111,7 @@
     </main>
 
     <footer>
-        <p>© 2024 Market Information System for Farmers</p>
+        <p>© 2025 Market Information System for Farmers</p>
     </footer>
 
     <script>

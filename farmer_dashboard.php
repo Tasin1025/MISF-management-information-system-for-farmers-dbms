@@ -168,6 +168,9 @@ $conn->close();
                 <p><strong>Profit Margin:</strong> 4,500 taka</p>
             </div>
         </section>
+        <footer>
+        <p>© 2025 Market Information System for Farmers</p>
+    </footer>
     </main>
 
     <script>

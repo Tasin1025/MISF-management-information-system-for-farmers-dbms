@@ -101,7 +101,7 @@ $result = $conn->query($sql);
     </main>
 
     <footer class="text-center p-3 bg-success text-white mt-5">
-        <p>&copy; 2024 Market Information System for Farmers</p>
+        <p>&copy; 2025 Market Information System for Farmers</p>
     </footer>
 
 </body>
