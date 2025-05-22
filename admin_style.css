@@ -47,6 +47,7 @@ section {
 
 section:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow */
 }
 
 section h2 {
@@ -65,7 +66,7 @@ table {
 
 table th, table td {
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Unified table border */
 }
 
 table th {
@@ -93,7 +94,7 @@ button {
 
 button:hover {
     background: #1565C0; /* Darker blue */
-    transform: scale(1.1);
+    transform: scale(1.05); /* Subtle scale for hover effect */
 }
 
 .button-container {
@@ -116,13 +117,15 @@ a.btn {
 
 a.btn:hover {
     background: #42A5F5; /* Slightly darker blue */
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 form {
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
-    background: #f8fbf8;
-    border: 2px solid #42A5F5; /* Blue border */
+    background-color: #f8fbf8;
+    border: 2px solid #64B5F6; /* Blue border */
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -149,16 +152,16 @@ input, select, textarea {
     border: 1px solid #ccc;
     border-radius: 25px;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Lora', serif;
+    font-family: 'Roboto', sans-serif;
     color: black;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: #64B5F6; /* Blue border on focus */
+    border-color: #42A5F5; /* Focus blue border */
     background-color: #eef7ee;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(100, 181, 246, 0.7); /* Light blue shadow */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(100, 181, 246, 0.7); /* Light blue glow */
 }
 
 .card {
@@ -172,6 +175,7 @@ input:focus, select:focus, textarea:focus {
 
 .card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow */
 }
 
 .image-background {
@@ -272,6 +276,27 @@ main.dashboard {
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+/* Responsive design - Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-card ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
 }
 
 /* New styles for form elements */
