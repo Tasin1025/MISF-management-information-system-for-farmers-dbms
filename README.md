@@ -56,7 +56,7 @@ To run AgriConnect locally:
 
 **Md Tasin Rahman**  
 Independent University, Bangladesh  
-GitHub: [Your GitHub Profile URL]
+GitHub: https://github.com/Tasin1025/
 
 ---
 
